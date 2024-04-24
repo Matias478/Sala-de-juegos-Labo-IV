@@ -1,0 +1,13 @@
+<body>
+    <ng-container *ngIf="exito==null">
+        <div class="Contenedor">
+            <div class="titulo"><h1>Login</h1></div>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name="nombre" placeholder="Ingrese su nombre"><br><br>
+            <label for="clave">Clave</label><br>
+            <input type="text" name="clave" placeholder="Ingrese su clave"><p></p>
+            <button id="btnLogin" (click)="login()">Loguearse</button>
+        </div>
+    </ng-container>
+</body>
+

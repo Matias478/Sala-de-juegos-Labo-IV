@@ -1,0 +1,39 @@
+body{
+    align-items: center;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aquamarine;
+    margin-bottom:auto;
+}
+div{
+  display: block;
+}
+button{
+  border:none;
+  border-radius: 5px;
+  font-size:medium;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+#btnQuienSoy{
+  background-color: rgb(240, 86, 86);;
+}
+h1{
+  font-family: 'Times New Roman', Times, serif;
+}
+@media screen and (max-width: 760px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+}
+@media screen and (max-width: 993px){
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+}

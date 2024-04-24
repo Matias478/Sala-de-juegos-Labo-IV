@@ -1,0 +1,43 @@
+body{
+    align-items: center;
+    text-align: justify;
+    margin-left: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.titulo{
+    text-align: center;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.Contenedor{
+    background-color:rgba(214, 33, 33, 0.897);  
+    border-radius: 5px;
+    margin-right: 82.4%;
+    justify-content: center;
+}
+button{
+    background-color: aquamarine;
+    margin-left: 29%;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    border:none;
+    border-radius: 5px;
+    font-size:medium;
+}
+label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight:600;
+    margin-left: 3px;
+}
+input{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+}
