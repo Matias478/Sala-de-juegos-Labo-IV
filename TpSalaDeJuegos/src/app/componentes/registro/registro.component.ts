@@ -1,48 +1,44 @@
-import { CommonModule } from '@angular/common';
-import { Component, Injector, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { MiUsuario } from '../../clases/usuario';
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../../auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-registro',
   standalone: true,
   imports: [RouterModule, FormsModule,CommonModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './registro.component.html',
+  styleUrl: './registro.component.css'
 })
-export class LoginComponent {
-  usuario:MiUsuario=new MiUsuario("","","");
+export class RegistroComponent {
   exito!:boolean;
   loginActivado:any;
+
   authService = inject(AuthService);
+  usuario:MiUsuario=new MiUsuario("","","");
 
   mensajeError:string | null=null;
-  login():void{
-    this.authService.login(this.usuario.email,this.usuario.clave)
+  signUp():void{
+    this.authService.register(this.usuario.nombre,this.usuario.email,this.usuario.clave)
     .subscribe({
       next: () => {
-        this.goTo("home");
-        this.guardarLogin();
+      this.goTo("home");
+      this.guardarRegister();
     },
     error: (err) =>{
       this.mensajeError = err.code;
     },
-  });
+  })
   }
 
-  rellenarValores(){
-    this.usuario.email="dani123@gmail.com";
-    this.usuario.clave="tito123";
-  }
-
-  guardarLogin(){
+  guardarRegister(){
     this.loginActivado=true;
     const flagLogin = JSON.stringify(this.loginActivado);
     localStorage.setItem("FlagLogin", flagLogin);
-    const userLogueado = JSON.stringify(this.usuario);
-    localStorage.setItem("userLogueado", userLogueado);
+    const userRegistrado = JSON.stringify(this.usuario);
+    localStorage.setItem("userRegistrado", userRegistrado);
   }
   
   constructor(private router: Router) {
